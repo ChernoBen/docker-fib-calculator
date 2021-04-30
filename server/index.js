@@ -20,7 +20,7 @@ const pgClient = new Pool({
 
 });
 
-pgClient.on('error', () => console.log('Lost P conn'))
+pgClient.on('error', () => console.log('Lost PG conn'))
 
 pgClient.on("connect", (client) => {
     client
