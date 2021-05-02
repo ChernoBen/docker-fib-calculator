@@ -8,14 +8,14 @@ script:
   - docker run -e CI=true cherno/react-test npm test
 
 after_success:
-   - docker build -t chernoben/multi-container-client-project ./client
-   - docker build -t chernoben/multi-container-nginx-project ./nginx
-   - docker build -t chernoben/multi-container-server-project ./server
-   - docker build -t chernoben/multi-container-worker-project ./worker
+   - docker build -t mfukushima/multi-container-client-project ./client
+   - docker build -t mfukushima/multi-container-nginx-project ./nginx
+   - docker build -t mfukushima/multi-container-server-project ./server
+   - docker build -t mfukushima/multi-container-worker-project ./worker
    # Log in to docker CLI
    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
    # pushing images to the dockerhub
-   - docker push chernoben/multi-container-client-project
-   - docker push chernoben/multi-container-nginx-project
-   - docker push chernoben/multi-container-server-project
-   - docker push chernoben/multi-container-worker-project
+   - docker push mfukushima/multi-container-client-project
+   - docker push mfukushima/multi-container-nginx-project
+   - docker push mfukushima/multi-container-server-project
+   - docker push mfukushima/multi-container-worker-project
